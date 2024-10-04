@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musfikur Rahaman - Personal Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .header, .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            min-height: 400px;
+        }
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        nav a {
+            margin: 0 15px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Musfikur Rahaman</h1>
+        <p>Benton, AR | (501) 430 0134 | <a href="mailto:shuvo.musfikur@gmail.com">shuvo.musfikur@gmail.com</a></p>
+        <a href="https://www.linkedin.com/in/your-linkedin-profile">LinkedIn Profile</a>
+    </div>
+
+    <nav>
+        <a id="homeLink" onclick="loadContent('home')">Home</a>
+        <a id="experienceLink" onclick="loadContent('experience')">Experience</a>
+        <a id="projectsLink" onclick="loadContent('projects')">Projects & Research</a>
+    </nav>
+
+    <div class="container" id="content">
+        <!-- Content will be loaded dynamically here -->
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Musfikur Rahaman. All rights reserved.</p>
+    </div>
+
+    <script>
+        // Function to load different sections of the page
+        function loadContent(page) {
+            let content = document.getElementById('content');
+            if (page === 'home') {
+                content.innerHTML = `
+                    <h2>Skills</h2>
+                    <ul>
+                        <li>CNN, SciKit-Learn, NumPy, Pandas, Matplotlib, Seaborn</li>
+                        <li>Python, Java, C, SQL, C++, HTML, CSS, JavaScript</li>
+                        <li>Tools: Microsoft Office, Git, Visual Studio, Eclipse, Jupyter</li>
+                    </ul>
+
+                    <h2>Education</h2>
+                    <p><strong>Master of Science in Information Technology</strong><br>
+                    Arkansas Tech University | August 2022 - April 2024 | CGPA: 4.00</p>
+
+                    <p><strong>BSc in Information Technology</strong><br>
+                    University of Information Technology & Sciences | January 2016 - April 2021 | CGPA: 3.83</p>
+                `;
+            } else if (page === 'experience') {
+                content.innerHTML = `
+                    <h2>Work Experience</h2>
+                    <h3>Graduate Assistant (GA)</h3>
+                    <p>Arkansas Tech University | August 2022 – May 2024</p>
+                    <p>Designed and led lab courses in Data Communication and Networking. Provided one-on-one support to students and assisted in grading assignments.</p>
+
+                    <h3>Research Assistant (RA)</h3>
+                    <p>University of Information Technology & Sciences | January 2020 – April 2021</p>
+                    <p>Collaborated on research regarding the impact of SARS-CoV-2 on IPF patients using machine learning and bioinformatics techniques.</p>
+                `;
+            } else if (page === 'projects') {
+                content.innerHTML = `
+                    <h2>Projects & Research</h2>
+                    <ul>
+                        <li><a href="https://ieeexplore.ieee.org/document/10156793">Enhancing the Programming Sequence for Undergraduate Computer Science Students</a></li>
+                        <li><a href="https://doi.org/10.1093/biomethods/bpac013">MLBioIGE: Machine Learning & Bioinformatics for SARS-CoV-2</a></li>
+                    </ul>
+
+                    <h3>Research Presentations</h3>
+                    <p>Participated in several conferences including the ATU Student Research Symposium and Arkansas Academy of Science, presenting research on deep learning and bioinformatics.</p>
+                `;
+            }
+        }
+
+        // Load the home page content by default when the page is opened
+        window.onload = function() {
+            loadContent('home');
+        };
+    </script>
+
+</body>
+</html>
