@@ -4,9 +4,34 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+JOBS = [
+   {
+    'id' : 1,
+    'title': 'Data Analyst',
+    'location': 'Dhaka',
+    'Salary' : 'USD 85,000'
+    },
+
+    {
+    'id' : 2,
+    'title': 'Web Developer',
+    'location': 'Dhaka',
+    
+    },
+
+    {
+    'id' : 3,
+    'title': 'Project Manager',
+    'location': 'Dhaka',
+    'Salary' : 'USD 105,000'
+    }
+    
+]
+
 @app.route("/")
 def home():
-    return render_template("home.html")
+    return render_template("home.html",
+                          jobs = JOBS)
 
 @app.route("/experience")
 def experience():

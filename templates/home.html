@@ -89,6 +89,29 @@
         </div>
     </div>
 
+    <div>
+        <h3 class="text-center">Jobs</h3>
+
+        <div style="margin-bottom: 16px;">
+            {% for job in jobs %}
+                <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
+                    <h4>{{ job.title }}</h4>
+                    <div><strong>Location:</strong> {{ job.location }}</div>
+                    <div>
+                        <strong>Salary:</strong> 
+                        {% if job.Salary %}
+                            {{ job.Salary }}
+                        {% else %}
+                            Salary not available
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
     <div class="footer">
         <p>&copy; 2024 Musfikur Rahaman. All rights reserved.</p>
     </div>
