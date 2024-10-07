@@ -1,0 +1,20 @@
+<div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
+    <!-- Job Details Section -->
+    <div>
+        <h4>{{ job.title }}</h4>
+        <div><strong>Location:</strong> {{ job.location }}</div>
+        <div>
+            <strong>Salary:</strong> 
+            {% if job.Salary %}
+                {{ job.Salary }}
+            {% else %}
+                Salary not available
+            {% endif %}
+        </div>
+    </div>
+    
+    <!-- Apply Button Section -->
+    <div>
+        <a href="{{ job.apply_url }}" class="btn btn-primary">Apply</a>
+    </div>
+</div>
